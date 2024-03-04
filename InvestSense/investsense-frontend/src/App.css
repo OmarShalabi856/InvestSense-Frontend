@@ -5,3 +5,7 @@
 .blue-button {
     @apply bg-blue-button h-10 w-20 flex items-center justify-center text-white font-bold rounded hover:bg-blue-button-hover cursor-pointer;
   }
+
+  .red-button {
+    @apply bg-red-button h-10 w-auto p-2 flex items-center justify-center text-white font-bold rounded hover:bg-red-button-hover cursor-pointer;
+  }

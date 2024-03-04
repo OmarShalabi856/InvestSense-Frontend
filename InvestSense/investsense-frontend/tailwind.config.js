@@ -9,6 +9,10 @@ module.exports = {
         "red-button-hover": "#b71c1c",
         "blue-button-hover": "#004d40",
       },
+      textColor:{
+        "red-custom": "#d32f2f",
+        "blue-custom": "#006064",
+      }
     },
   },
   plugins: [],
