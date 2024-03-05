@@ -6,7 +6,8 @@ type Props = {};
 
 const Logo = (props: Props) => {
   return (
-    <img  src={MainLogo} className="logo" alt="Logo" />
+    <img src={MainLogo} className="w-full sm:w-1/2 h-full object-cover logo" alt="Logo" />
+
   );
 };
 
