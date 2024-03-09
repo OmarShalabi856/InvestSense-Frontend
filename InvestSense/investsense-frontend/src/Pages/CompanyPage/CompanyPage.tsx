@@ -4,6 +4,7 @@ import { CompanyProfile } from "../../company";
 import { getCompanyProfile } from "../../Components/api";
 import Sidebar from "./Sidebar";
 import CompanyDashboard from "./CompanyDashboard";
+import { Tile } from "./Tile";
 
 interface Props {}
 
@@ -24,13 +25,13 @@ function CompanyPage({}: Props) {
 
   return (
     <div className="flex flex-row h-full">
-    <Sidebar/>
-    <CompanyDashboard/>
-      {company ? (
-        <div>{company?.companyName}</div>
-      ) : (
-        <div>Company Not Found</div>
-      )}
+      <Sidebar />
+      <CompanyDashboard ticker={ticker!}>
+          <Tile title="Trafic" subtitle={120392} />
+          <Tile title="Sales" subtitle={393443} />
+          <Tile title="New Users" subtitle={1000} />
+          <Tile title="Update Factor" subtitle={12} />
+      </CompanyDashboard>
     </div>
   );
 }

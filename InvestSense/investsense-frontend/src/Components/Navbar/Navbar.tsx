@@ -1,6 +1,6 @@
 import Logo from "../Logo/Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons";
 import "../../index.css";
 import { Link } from "react-router-dom";
 type Props = {};
@@ -9,16 +9,16 @@ const Navbar = (props: Props) => {
   return (
     <div className="bg-white h-20 flex justify-start w-full items-center">
       <div className="flex justify-start items-center w-full ">
-        <Link to="/" className="w-1/2 sm:w-1/4">
+        <Link to="/" className="max-w-44">
           <Logo />
         </Link>
-        <div className="flex justify-between w-1/6">
+        <div className="flex justify-between w-1/6 ml-4 ">
           <div>
             <Link
               to="/search"
-              className="flex justify-start items-center w-1/6"
+              className="flex justify-start items-center w-1/6 space-x-2"
             >
-              <FontAwesomeIcon icon={faCaretDown} />
+              <FontAwesomeIcon icon={faSearch} />
               <div className="font-bold mt-1 font-sans text-sm sm:hidden md:block">
                 Search
               </div>
