@@ -7,7 +7,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="bg-white h-20 flex justify-start w-full items-center">
+    <div className="bg-white h-20 flex justify-start w-full items-center fixed top-0">
       <div className="flex justify-start items-center w-full ">
         <Link to="/" className="max-w-44">
           <Logo />

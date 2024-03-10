@@ -3,9 +3,10 @@ import HomePage from "../Pages/HomePage/HomePage";
 import App from "../App";
 import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyPage from "../Pages/CompanyPage/CompanyPage";
-import Sidebar from "../Pages/CompanyPage/Sidebar";
-import CompanyProfile from "../Pages/CompanyPage/CompanyProfile";
-import IncomeStatement from "../Pages/CompanyPage/IncomeStatement";
+import CompanyProfile from "../Components/CompanyProfile";
+import IncomeStatement from "../Components/IncomeStatement";
+import BalanceSheet from "../Components/BalanceSheet";
+import CashFlowStatement from "../Components/CashFlowStatement"
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +21,8 @@ export const router = createBrowserRouter([
         children:[
           { path: "company-profile", element: <CompanyProfile /> },
           { path: "income-statement", element: <IncomeStatement /> },
+          { path: "balance-sheet", element: <BalanceSheet /> },
+          {path: "cashflow-statement", element: <CashFlowStatement /> },
         ] 
       }
     ],

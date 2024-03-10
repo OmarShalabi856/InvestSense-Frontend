@@ -5,7 +5,7 @@ type Props = {};
 
 const HomePage = (props: Props) => {
   return (
-    <div className="container">
+    <div className="container mt-20">
       <div className="row">
         <div className="col-lg-6 col-sm-12">
           <Hero />

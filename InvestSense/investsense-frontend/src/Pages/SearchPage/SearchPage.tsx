@@ -46,7 +46,7 @@ function SearchPage() {
   }
   console.log(portfolio);
   return (
-    <div className="w-full">
+    <div className="w-full mt-20">
         <Search
             search={search}
             onSearch={onSearch}

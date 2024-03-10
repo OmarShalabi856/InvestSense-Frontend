@@ -1,38 +1,35 @@
 import React from "react";
 
-type Props = {};
-// const data = testIncomeStatementData;
-// type Company = (typeof data)[0];
-// const config = [
-//   {
-//     label: "Year",
-//     render: (company: Company) => company.acceptedDate,
-//   },
-//   {
-//     label: "Cost Of Revenue",
-//     render: (company: Company) => company.costOfRevenue,
-//   },
-// ];
+interface Props {
+    config: any,
+    data: any
+}
 
-function Table({}: Props) {
-//   const renderedRows = data.map((company) => {
-//     return (
-//       <tr key={company.cik}>
-//         {config.map((val: any) => (
-//           <td key={val.label}>{val.render(company)}</td>
-//         ))}
-//       </tr>
-//     );
-//   });
-//   const renderedHeaders = config.map((element: any) => {
-//     return <th>{element.label}</th>;
-//   });
-  return <>
-  {/* <table className="w-full">
-    <thead>{renderedHeaders}</thead>
-    <tbody>{renderedRows}</tbody>
-  </table> */}
-  </>;
+function Table({ config, data }: Props) {
+    const renderedRows = data.map((company: any) => {
+        return (
+            <tr key={company.cik}>
+                {config.map((val: any) => (
+                    <td  className="text-md text-center p-2" key={val.label}>{val.render(company)}</td>
+                ))}
+            </tr>
+        );
+    });
+
+    const renderedHeaders = config.map((element: any) => {
+        return <th className="text-md p-2" key={element.label} >{element.label}</th>;
+    });
+
+    return (
+        <div className="overflow-x-auto ">
+            <table className="min-w-max">
+                <thead>
+                    {renderedHeaders}
+                </thead>
+                <tbody>{renderedRows}</tbody>
+            </table>
+        </div>
+    );
 }
 
 export default Table;

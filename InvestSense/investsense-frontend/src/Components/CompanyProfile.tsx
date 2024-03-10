@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { CompanyKeyMetrics } from "../../company";
+import { CompanyKeyMetrics } from "../company";
 import { useOutletContext } from "react-router";
-import { getKeyMetrics } from "../../Components/api";
-import RatioList from "../../Components/RatioList";
+import { getKeyMetrics } from "./api";
+import RatioList from "./RatioList";
 
 const tableConfig = [
   {
@@ -70,7 +70,6 @@ type Props = {};
 function CompanyProfile({}: Props) {
   const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
-  console.log(ticker)
   useEffect(() => {
     const companyDataCall = async () => {
       const result = await getKeyMetrics(ticker);
