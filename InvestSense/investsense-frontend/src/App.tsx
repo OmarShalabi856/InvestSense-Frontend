@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import "./index.css";
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Navbar";
 import { Outlet } from "react-router";
 
 

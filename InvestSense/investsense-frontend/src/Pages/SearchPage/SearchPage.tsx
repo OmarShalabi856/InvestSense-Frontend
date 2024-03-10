@@ -1,12 +1,12 @@
 import React, { ChangeEvent, useState, FormEvent } from "react";
 import "../../App.css";
 import "../../index.css";
-import Search from "../../Components/Search/Search";
-import CardList from "../../Components/CardList/CardList";
+import Search from "../../Components/Search";
+import CardList from "../../Components/CardList";
 import { CompanySearch } from "../../company";
 import { searchCompanies } from "../../Components/api";
 import PortfolioList from "../../Components/Portfolio/PortfolioList/PortfolioList";
-import Navbar from "../../Components/Navbar/Navbar";
+import Navbar from "../../Components/Navbar";
 
 function SearchPage() {
   const [search, setSearch] = useState<string>("");

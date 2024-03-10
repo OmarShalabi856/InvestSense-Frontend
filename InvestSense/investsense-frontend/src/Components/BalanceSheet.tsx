@@ -4,6 +4,7 @@ import { useOutletContext } from "react-router";
 import Table from "./Table";
 import { getBalanceStatement, getIncomeStatement } from "./api";
 import RatioList from "./RatioList";
+import Spinner from "./Spinner";
 
 type Props = {};
 const config = [
@@ -77,7 +78,7 @@ const BalanceSheet = (props: Props) => {
       {balanceStatement ? (
         <RatioList config={config} data={balanceStatement} />
       ) : (
-        <div>Loading...</div>
+        <Spinner/>
       )}
     </>
   );

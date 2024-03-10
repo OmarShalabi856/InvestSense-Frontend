@@ -1,7 +1,7 @@
-import Logo from "../Logo/Logo";
+import Logo from "./Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faSearch } from "@fortawesome/free-solid-svg-icons";
-import "../../index.css";
+import "../index.css";
 import { Link } from "react-router-dom";
 type Props = {};
 

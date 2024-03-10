@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../../Components/Hero";
-import Start from "../../Components/Start/Start";
+import Start from "../../Components/Start";
 type Props = {};
 
 const HomePage = (props: Props) => {

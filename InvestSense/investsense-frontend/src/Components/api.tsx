@@ -3,7 +3,8 @@ import { CompanyBalanceSheet, CompanyCashFlow, CompanyIncomeStatement, CompanyKe
 export interface SearchResponse {
   data: CompanySearch[];
 }
-const FINANCE_API_KEY = "05db7e289d0eb8a1b1d8dbfad8dbdc71";
+// const FINANCE_API_KEY = "05db7e289d0eb8a1b1d8dbfad8dbdc71";
+const FINANCE_API_KEY ="kOs7ssheFzhsjJgFFWkrz6CA0e1NH7ki"
 const BASE_API_URL = "https://financialmodelingprep.com/api/v3";
 
 export const searchCompanies = async (query: string) => {

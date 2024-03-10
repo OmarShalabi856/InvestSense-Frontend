@@ -3,6 +3,7 @@ import { CompanyIncomeStatement } from "../company";
 import { useOutletContext } from "react-router";
 import { getIncomeStatement, getKeyMetrics } from "./api";
 import Table from "./Table";
+import Spinner from "./Spinner";
 
 type Props = {};
 const configs = [
@@ -74,7 +75,9 @@ const IncomeStatement = (props: Props) => {
   }, []);
   return <>{incomeStatement 
     ? <Table config={configs} data={incomeStatement} /> 
-  : <div>Loading...</div>}</>;
+  : 
+  <Spinner/>
+  }</>;
 };
 
 export default IncomeStatement;

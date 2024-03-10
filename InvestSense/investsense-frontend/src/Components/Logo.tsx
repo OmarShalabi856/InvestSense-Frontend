@@ -1,5 +1,5 @@
 import React from 'react';
-import MainLogo from '../Images/MainLogo.png';
+import MainLogo from './Images/MainLogo.png';
 
 
 type Props = {};

@@ -1,6 +1,6 @@
 import React, { SyntheticEvent } from "react";
-import Card from "../CompanyCard/CompanyCard";
-import { CompanySearch } from "../../company";
+import Card from "./CompanyCard";
+import { CompanySearch } from "../company";
 import { v4 as uuidv4 } from 'uuid';
 
 interface Props {

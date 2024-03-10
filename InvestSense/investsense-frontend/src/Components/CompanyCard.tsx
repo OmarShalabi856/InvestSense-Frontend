@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { CompanySearch } from "../../company";
-import AddPortfolio from "../Portfolio/AddPortfolio/AddPortfolio";
+import { CompanySearch } from "../company";
+import AddPortfolio from "./Portfolio/AddPortfolio/AddPortfolio";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -19,7 +19,7 @@ const Card: React.FC<Props> = ({
     <div className="bg-slate-100">
       <div className="  card col-12 flex-row justify-between rounded">
         <div className="card-body">
-        <Link to={`/company/${searchResult.symbol}`}>
+        <Link to={`/company/${searchResult.symbol}/company-profile`}>
           <h4 className="card-title">
             {searchResult.name}({searchResult.symbol})
           </h4>
