@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdAssuredWorkload, MdOutlineCalculate } from 'react-icons/md';
-import { FaMoneyCheckDollar,FaMoneyBillTransfer} from "react-icons/fa6";
-
+import { FaMoneyCheckDollar,FaMoneyBillTransfer,FaChartLine} from "react-icons/fa6";
 
 type Props = {};
 
@@ -24,6 +23,10 @@ const Sidebar = (props: Props) => {
       <Link className='w-full flex items-start my-2 ' to="cashflow-statement">
         <FaMoneyBillTransfer  className='mt-1'/>
         <span className='ml-2 font-bold text-sm'>CASHFLOW STATEMENT</span>
+      </Link>
+      <Link className='w-full flex items-start my-2 ' to="historical-dividend">
+        <FaChartLine  className='mt-1'/>
+        <span className='ml-2 font-bold text-sm'>HISTORICAL DIVIDEND</span>
       </Link>
     </div>
   );

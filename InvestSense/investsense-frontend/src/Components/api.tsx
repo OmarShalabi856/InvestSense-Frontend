@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CompanyBalanceSheet, CompanyCashFlow, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch } from "../company";
+import { CompanyBalanceSheet, CompanyCashFlow, CompanyHistoricalDividend, CompanyIncomeStatement, CompanyKeyMetrics, CompanyProfile, CompanySearch, Dividend } from "../company";
 export interface SearchResponse {
   data: CompanySearch[];
 }
@@ -73,6 +73,17 @@ export const getCashflowStatement = async (query: string) => {
   try {
     const data = await axios.get<CompanyCashFlow[]>(
       `${BASE_API_URL}/cash-flow-statement/${query}?limit=40&apikey=${FINANCE_API_KEY}`
+    );
+    return data
+  } catch (error) {
+      console.log("error: ", error);
+  }
+}
+
+export const getHistoricalDividend = async (query: string) => {
+  try {
+    const data = await axios.get<CompanyHistoricalDividend>(
+      `${BASE_API_URL}/historical-price-full/stock_dividend/${query}?limit=40&apikey=${FINANCE_API_KEY}`
     );
     return data
   } catch (error) {

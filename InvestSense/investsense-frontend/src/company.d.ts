@@ -310,6 +310,7 @@ export interface CompanySearch {
   }
   
   export interface CompanyHistoricalDividend {
+    [x: string]: any;
     symbol: string;
     historical: Dividend[];
   }
