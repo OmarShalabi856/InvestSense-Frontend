@@ -39,8 +39,8 @@ const Navbar = (props: Props) => {
       </div>
 
       <div className="flex justify-evenly mx-4 w-52">
-        <div className="red-button">Login</div>
-        <div className="blue-button">Sign Up</div>
+        <Link to="/login" className="red-button">Login</Link>
+        <Link to="/register" className="blue-button">Sign Up</Link>
       </div>
     </div>
   );
