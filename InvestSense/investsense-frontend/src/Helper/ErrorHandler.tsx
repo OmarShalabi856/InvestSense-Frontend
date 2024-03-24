@@ -4,14 +4,16 @@ import { toast } from "react-toastify";
 export const handleError = (error: any) => {
   if (axios.isAxiosError(error)) {
     var err = error.response;
+    console.log(err)
     if (Array.isArray(err)) {
       for (let val of err?.data.errors) {
         toast.warning(val.description);
       }
-    } else if (typeof err?.data.errors === "object") {
-      for (let e of err.data.errors) {
-        toast.warning(err.data.errors(e)[0]);
-      }
+    } else if (Array.isArray(err?.data)) {
+        console.log("object");
+        for (let e of err?.data!) {
+          toast.warning(e.description);
+        }
     } else if (err?.data) {
       toast.warning(err.data);
     } else if (err?.status === 401) {

@@ -4,7 +4,11 @@ import { useOutletContext } from "react-router";
 import { getKeyMetrics } from "./api";
 import RatioList from "./RatioList";
 import Spinner from "./Spinner";
-import { formatLargeNonMonetaryNumber, formatRatio } from "../Helper/NumberFormatting";
+import {
+  formatLargeNonMonetaryNumber,
+  formatRatio,
+} from "../Helper/NumberFormatting";
+import StockComment from "./StockComment/StockComment";
 
 const tableConfig = [
   {
@@ -87,14 +91,18 @@ function CompanyProfile({}: Props) {
     };
     companyDataCall();
   }, []);
-  return <div>
-    {companyData
-    ?(<RatioList  data={companyData} config={tableConfig} />)
-    :
-    <Spinner/>
-    }
-    
-  </div>;
+  return (
+    <div>
+      {companyData ? (
+        <>
+          <RatioList data={companyData} config={tableConfig} />
+          <StockComment stockSymbol={ticker} />
+        </>
+      ) : (
+        <Spinner />
+      )}
+    </div>
+  );
 }
 
 export default CompanyProfile;

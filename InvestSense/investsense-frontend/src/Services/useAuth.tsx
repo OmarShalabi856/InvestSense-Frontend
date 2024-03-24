@@ -37,7 +37,7 @@ export const UserProvider = ({ children }: Props) => {
     if (storedUser && storedToken) {
       setUser(JSON.parse(storedUser));
       setToken(storedToken);
-      axios.defaults.headers.common["Authorization"]="Bearer "+token
+      axios.defaults.headers.common["Authorization"] = "Bearer " + storedToken; // Use storedToken here
     }
     setIsReady(true);
   }, []);
@@ -47,7 +47,7 @@ export const UserProvider = ({ children }: Props) => {
       const res = await registerAPI(email, username, password);
       if (res && res.data && res.data.token) {
         const userObj = {
-          userName: res.data.userName,
+          username: res.data.username,
           email: res.data.email,
           token: res.data.token
         };
@@ -68,10 +68,11 @@ export const UserProvider = ({ children }: Props) => {
       const res = await loginAPI(email, password);
       if (res && res.data && res.data.token) {
         const userObj = {
-          userName: res.data.userName,
+          username: res.data.username,
           email: res.data.email,
           token: res.data.token
         };
+        console.log(userObj)
         localStorage.setItem("token", userObj.token);
         localStorage.setItem("user", JSON.stringify(userObj));
         setToken(userObj.token);
@@ -93,6 +94,7 @@ export const UserProvider = ({ children }: Props) => {
     localStorage.removeItem("user");
     setToken(null);
     setUser(null);
+    delete axios.defaults.headers.common["Authorization"]; // Remove Authorization header
     navigate("/");
   };
 
@@ -103,4 +105,4 @@ export const UserProvider = ({ children }: Props) => {
   );
 };
 
-export const useAuth = ()=>React.useContext(UserContext);
+export const useAuth = () => React.useContext(UserContext);
