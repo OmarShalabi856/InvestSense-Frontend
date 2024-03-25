@@ -37,10 +37,10 @@ export const UserProvider = ({ children }: Props) => {
     if (storedUser && storedToken) {
       setUser(JSON.parse(storedUser));
       setToken(storedToken);
-      axios.defaults.headers.common["Authorization"] = "Bearer " + storedToken; // Use storedToken here
+      axios.defaults.headers.common["Authorization"] = "Bearer " + storedToken; 
     }
     setIsReady(true);
-  }, []);
+  }, [user,token]);
 
   const registerUser = async (email: string, username: string, password: string) => {
     try {
@@ -56,7 +56,10 @@ export const UserProvider = ({ children }: Props) => {
         setToken(userObj.token);
         setUser(userObj);
         toast.success("Registration Success!");
-        navigate("/search");
+        setTimeout(() => {
+            navigate("/search");
+          }, 2000); 
+         
       }
     } catch (error) {
       toast.warning("A Server Error Occurred!");
@@ -78,7 +81,10 @@ export const UserProvider = ({ children }: Props) => {
         setToken(userObj.token);
         setUser(userObj);
         toast.success("Login Success!");
-        navigate("/search");
+        setTimeout(() => {
+            navigate("/search");
+          }, 2000); 
+         
       }
     } catch (error) {
       toast.warning("A Server Error Occurred!");
@@ -94,7 +100,7 @@ export const UserProvider = ({ children }: Props) => {
     localStorage.removeItem("user");
     setToken(null);
     setUser(null);
-    delete axios.defaults.headers.common["Authorization"]; // Remove Authorization header
+    delete axios.defaults.headers.common["Authorization"]; 
     navigate("/");
   };
 

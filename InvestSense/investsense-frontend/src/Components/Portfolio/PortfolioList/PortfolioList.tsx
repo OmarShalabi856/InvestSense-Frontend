@@ -1,8 +1,9 @@
 import React, { SyntheticEvent } from "react";
 import PortfolioCard from "../PortfolioCard/PortfolioCard";
+import { PortfolioGet } from "../../../Services/Models/PortfolioGet";
 
 interface Props {
-  portfolio: string[];
+  portfolio: PortfolioGet[];
   onDeletePortfolio: (e: SyntheticEvent) => void;
 }
 
@@ -17,8 +18,8 @@ const PortfolioList: React.FC<Props> = ({
         {portfolio.map((stock) => (
           <PortfolioCard
             onDeletePortfolio={onDeletePortfolio}
-            key={stock}
-            symbol={stock}
+            key={stock.symbol}
+            symbol={stock.symbol}
           />
         ))}
       </div>

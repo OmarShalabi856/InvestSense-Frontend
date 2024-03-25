@@ -4,9 +4,10 @@ import { commentPostAPI } from "../../Services/backend-api";
 
 interface Props {
   symbol: string;
+  setCommentAdded:any
 }
 
-const StockCommentForm: React.FC<Props> = ({ symbol }) => {
+const StockCommentForm: React.FC<Props> = ({ setCommentAdded,symbol }) => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
 
@@ -23,6 +24,7 @@ const StockCommentForm: React.FC<Props> = ({ symbol }) => {
     commentPostAPI(symbol,title,text).then((res)=>{
         if(res){
             toast.success("Comment Posted Successfully!")
+            setCommentAdded((prev:boolean)=>!prev)
         }
     })
     .catch((err)=>{
