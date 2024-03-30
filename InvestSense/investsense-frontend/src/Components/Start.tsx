@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../App.css'
 type Props = {};
 
@@ -9,9 +10,9 @@ function Start({}: Props) {
           Navigate the Markets with Invest Sense: Your Smart Destination for
           Tracking and Monitoring Stock Prices!
         </div>
-        <div className="red-button mt-16">
+        <Link to="/search" className="red-button mt-16">
             Get Started!
-        </div>
+        </Link>
       </div>
     </>
   );
