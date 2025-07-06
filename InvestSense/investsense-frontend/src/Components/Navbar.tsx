@@ -30,10 +30,6 @@ const Navbar = (props: Props) => {
               to="/dashboard"
               className="flex justify-start items-center w-1/6 space-x-2"
             >
-              <FontAwesomeIcon icon={faCaretDown} />
-              <div className="font-bold mt-1 font-sans text-sm sm:hidden md:block ">
-                Dashboard
-              </div>
             </Link>
           </div>
         </div>

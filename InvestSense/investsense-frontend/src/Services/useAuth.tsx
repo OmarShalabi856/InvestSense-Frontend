@@ -40,7 +40,7 @@ export const UserProvider = ({ children }: Props) => {
       axios.defaults.headers.common["Authorization"] = "Bearer " + storedToken; 
     }
     setIsReady(true);
-  }, [user,token]);
+  }, []);
 
   const registerUser = async (email: string, username: string, password: string) => {
     try {

@@ -7,7 +7,8 @@ import { CommentGet } from "./Models/CommentGet";
 import { PortfolioGet } from "./Models/PortfolioGet";
 import { PortfolioPost } from "./Models/PortfolioPost";
 
-const api = "https://localhost:7163/api";
+const api = process.env.REACT_APP_BACKEND_API;
+console.log(api)
 
 export const loginAPI = async (email: string, password: string) => {
   try {
